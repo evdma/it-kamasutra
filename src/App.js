@@ -9,17 +9,18 @@ import { Route } from 'react-router-dom';
 const App = (props) => {
 
   return (
-      <div className="app-wrapper">
-        <Header />
-        <Navbar />
-        <div className="app-wrapper-content">
-          <Route exact path='/profile' render={()=><Profile
+    <div className="app-wrapper">
+      <Header />
+      <Navbar />
+      <div className="app-wrapper-content">
+        <Route exact path='/profile' render={() => 
+          <Profile
             state={props.state.profilePage}
-            upateNewPostText={props.upateNewPostText}
-            addPost={props.addPost}/>} />
-          <Route path='/dialogs' render={()=><Dialogs state={props.state.dialogsPage} />} />
-        </div>
+            dispatch={props.dispatch} />}
+          />
+        <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} />} />
       </div>
+    </div>
   );
 }
 
