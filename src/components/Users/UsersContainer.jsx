@@ -1,14 +1,14 @@
 import React from 'react';
 import { follow, unfollow, setUsers, setCurrentPage, toggleFollowingProgress, getUsers } from '../../redux/users-reducer';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
-import {withAuthRedirect} from '../../hoc/withAuthRedirect';
-import { compose } from '../../../../../../../AppData/Local/Microsoft/TypeScript/3.6/node_modules/redux';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
-class UsersContainer extends React.Component{
+class UsersContainer extends React.Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.pageSize);
     }
 
@@ -17,10 +17,10 @@ class UsersContainer extends React.Component{
         this.props.getUsers(pageNumber, this.props.pageSize);
     }
 
-    render(){
+    render() {
         return <>
-        {this.props.isFetching ? <Preloader />: null}
-            <Users 
+            {this.props.isFetching ? <Preloader /> : null}
+            <Users
                 currentPage={this.props.currentPage}
                 pageSize={this.props.pageSize}
                 totalUsersCount={this.props.totalUsersCount}
@@ -28,7 +28,7 @@ class UsersContainer extends React.Component{
                 users={this.props.users}
                 follow={this.props.follow}
                 unfollow={this.props.unfollow}
-                followingInProgress = {this.props.followingInProgress}
+                followingInProgress={this.props.followingInProgress}
             />
         </>
     }
@@ -47,7 +47,7 @@ let mapStateTopProps = (state) => {
 
 export default compose(
     withAuthRedirect,
-    connect(mapStateTopProps,{
+    connect(mapStateTopProps, {
         follow,
         unfollow,
         setUsers,
