@@ -2,42 +2,46 @@ import React from 'react';
 import classes from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import { Field, reduxForm } from 'redux-form';
 
 const Dialogs = (props) => {
-    
+
     let state = props.dialogsPage;
 
-    let dialogsElements = state.dialogs.map (
+    let dialogsElements = state.dialogs.map(
         dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id} />
     );
 
-    let messagesElements = state.messages.map (
+    let messagesElements = state.messages.map(
         message => <Message message={message.message} key={message.id} id={message.id} />
     );
 
-    let newMessageBody = state.newMessageBody;
-
-    let onSendMessageClick = () => {
-        props.sendMessage();
+    let addNewMessage = (values) => {
+        props.sendMessage(values.newMessageBody);
     }
 
-    let onNewMessageChange = (e) =>{
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
-    }
-    
     return (<div className={classes.dialogs}>
         <div className={classes.dialogsItems}>
             {dialogsElements}
         </div>
         <div className={classes.messages}>
             <div>{messagesElements}</div>
-            <div>
-                <div><textarea onChange={onNewMessageChange} value={newMessageBody} placeholder="Enter your message"></textarea></div>
-                <div><button onClick={onSendMessageClick}>Send message</button></div>
-            </div>
         </div>
+        <AddMessageFormRedux onSubmit={addNewMessage} />
     </div>)
 }
+
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div>
+                <Field component="textarea" name="newMessageBody" placeholder="Enter your message" />
+            </div>
+            <div><button>Send message</button></div>
+        </form>
+    )
+}
+
+const AddMessageFormRedux = reduxForm({ form: 'dialogAddMessageForm' })(AddMessageForm)
 
 export default Dialogs
