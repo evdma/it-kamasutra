@@ -14,7 +14,7 @@ const ProfileInfo = (props) => {
             <img src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg" />
         </div> */}
         <div className={classes.descriptionBlock}>
-            <img src={props.profile.photos.large}/>
+            <img src={props.profile.photos.large} alt=""/>
             <ProfileStatus status="Hello, its me"/>
         </div>
     </div>)

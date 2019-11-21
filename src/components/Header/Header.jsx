@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
     return (<header className={classes.header}>
-        <img src="https://www.redditstatic.com/new-icon.png" />
+        <img src="https://www.redditstatic.com/new-icon.png" alt=""/>
 
         <div className={classes.loginBlock}>
             {
