@@ -19,13 +19,13 @@ let initialState = {
 
 const usersReducer = (state = initialState, action) => {
 
-    switch(action.type){
+    switch (action.type) {
         case FOLLOW:
             return {
                 ...state,
                 users: state.users.map(user => {
-                    if(user.id === action.userId){
-                        return {...user, followed: true}
+                    if (user.id === action.userId) {
+                        return { ...user, followed: true }
                     }
                     return user
                 })
@@ -34,8 +34,8 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map(user => {
-                    if(user.id === action.userId){
-                        return {...user, followed: false}
+                    if (user.id === action.userId) {
+                        return { ...user, followed: false }
                     }
                     return user
                 })
@@ -51,36 +51,36 @@ const usersReducer = (state = initialState, action) => {
                 currentPage: action.currentPage
             }
         case SET_TOTAL_USERS_COUNT:
-            return{
+            return {
                 ...state,
                 totalUsersCount: action.count
             }
         case TOGGLE_IS_FETCHING:
-            return{
+            return {
                 ...state,
                 isFetching: action.isFetching
             }
         case TOGGLE_IS_FOLLOWING:
-            return{
+            return {
                 ...state,
                 followingInProgress: action.isFetching
-                ? [...state.followingInProgress, action.userId]
-                :[...state.followingInProgress.filter(id => id !== action.userId)]
+                    ? [...state.followingInProgress, action.userId]
+                    : [...state.followingInProgress.filter(id => id !== action.userId)]
             }
         default:
             return state;
     }
 }
 
-export const followSuccess = (userId) => ({type: FOLLOW, userId});
-export const unfollowSuccess = (userId) => ({type: UNFOLLOW, userId});
-export const setUsers = (users) => ({type: SET_USERS, users});
-export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
-export const setUsersTotalCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count: totalUsersCount});
-export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
-export const toggleFollowingProgress = (isFetching, userId) => ({type: TOGGLE_IS_FOLLOWING, isFetching, userId});
+export const followSuccess = (userId) => ({ type: FOLLOW, userId });
+export const unfollowSuccess = (userId) => ({ type: UNFOLLOW, userId });
+export const setUsers = (users) => ({ type: SET_USERS, users });
+export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
+export const setUsersTotalCount = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, count: totalUsersCount });
+export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
+export const toggleFollowingProgress = (isFetching, userId) => ({ type: TOGGLE_IS_FOLLOWING, isFetching, userId });
 
-export const getUsers = (currentPage,pageSize) => {
+export const getUsers = (currentPage, pageSize) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
         usersAPI.getUsers(currentPage, pageSize).then(data => {
