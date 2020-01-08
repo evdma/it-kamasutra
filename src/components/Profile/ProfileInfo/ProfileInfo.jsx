@@ -20,8 +20,11 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
     }
 
     const onSubmit = (formData) => {
-        saveProfile(formData);
-        setEditMode(false);
+        saveProfile(formData).then(
+            () => {
+                setEditMode(false);
+            }
+        );
     }
 
     return (<div>
