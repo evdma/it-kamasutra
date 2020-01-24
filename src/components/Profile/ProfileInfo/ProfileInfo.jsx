@@ -4,6 +4,7 @@ import Preloader from '../../common/Preloader/Preloader';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import userPhoto from '../../../assets/images/user.png';
 import ProfileDataForm from './ProfileDataForm';
+import Button from 'react-bootstrap/Button';
 
 const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, saveProfile }) => {
 
@@ -31,7 +32,7 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
         <div className={classes.descriptionBlock}>
             <img src={profile.photos.large || userPhoto}
                 className={classes.mainPhoto} alt="" />
-            {isOwner && <input type="file" onChange={onMainPhotoSelected} />}
+            {isOwner && <input type="file" onChange={onMainPhotoSelected} className={classes.controlsBtn} />}
             {editMode
                 ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} />
                 : <ProfileData profile={profile} isOwner={isOwner} goToEditMode={() => { setEditMode(true) }} />
@@ -45,7 +46,7 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
     return (
         <div>
             <div>
-                {isOwner && <button onClick={goToEditMode}>edit</button>}
+                {isOwner && <Button variant="primary" onClick={goToEditMode} className={classes.controlsBtn}>edit</Button>}
             </div>
             <div>
                 <b>Fullname</b>: {profile.fullname}

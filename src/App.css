@@ -1,3 +1,16 @@
+:root {
+  --bg-light: #faf2ef;
+  --text-light:#b6b1ae;
+  --bg-light-secondary: #6ad6b2;
+  --bg-light-main: #38c29e;
+  --bg-dark: #545c67;
+  --text-dark: #ffffff;
+  --bg-main-accent: #24b1b8;
+  --bg-secondary-accent: #fcd704;
+  --text-main-accent: #fcd704;
+  --text-secondary-accent: #24b1b8;
+}
+
 .app-wrapper{
   display: grid;
   grid-template-areas: 'h h'
@@ -5,11 +18,11 @@
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   /* grid-gap: 10px; */
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
 .app-wrapper-content{
   grid-area: c;
-  background-color: blue;
+  background-color: var(--bg-light);
 }

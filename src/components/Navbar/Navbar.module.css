@@ -1,14 +1,18 @@
 .nav{
     grid-area: n;
-    background-color: red;
+    background-color: var(--bg-dark);
     padding: 20px;
 }
 
 .item a{
-    color: white;
+    color: var(--text-dark);
     text-decoration: none;
 }
 
 .item a.activeLink{
-    color: gold;
+    color: var(--text-main-accent);
+}
+
+.item a:hover{
+    color: var(--text-secondary-accent);
 }

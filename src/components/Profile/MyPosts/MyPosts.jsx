@@ -4,6 +4,7 @@ import Post from './Post/Post';
 import { reduxForm, Field } from 'redux-form';
 import { required, maxLengthCreator } from '../../../utils/validators/validators';
 import { Textarea } from '../../common/FormsControls/FormsControls';
+import Button from 'react-bootstrap/Button';
 
 let maxLength10 = maxLengthCreator(10);
 
@@ -49,13 +50,13 @@ const MyPosts = React.memo((props) => {
 
 const AddNewPostForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className={classes.newPost} >
             <div>
                 <Field validate={[required, maxLength10]} component={Textarea}
                     name="newPostText" placeholder="Post message" />
             </div>
             <div>
-                <button>Add post</button>
+                <Button variant="primary" type="submit">Add post</Button>
             </div>
         </form>
     )

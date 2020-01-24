@@ -1,5 +1,9 @@
 .descriptionBlock {
     padding: 10px;
+    border-radius: 30px;
+    background-color: var(--bg-secondary-accent);
+    margin: 30px;
+    color: var(--dark);
 }
 
 .mainPhoto {
@@ -8,4 +12,9 @@
 
 .contact {
     margin-left: 10px;
+}
+
+.controlsBtn {
+    display: block;
+    margin: 10px 0;
 }

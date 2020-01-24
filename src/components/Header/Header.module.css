@@ -1,16 +1,34 @@
-.header{
+.header {
   grid-area: h;
-  background-color: green;
+  background-color: var(--bg-main-accent);
+  color: var(--text-dark);
+  display: flex;
+  justify-content: space-between;
 }
 
-.header img{
-  width: 20px;
+.titleBlock {
+  display: flex;
+  align-items: center;
+}
+
+.titleBlock img {
+  width: 40px;
+  margin: 10px 20px;
 }
 
 .loginBlock {
   float: right;
 }
 
-.loginBlock a{
-  color: white;
+.header a {
+  color: var(--text-dark);
+}
+
+.header a:hover {
+  text-decoration: none;
+}
+
+
+.authBtn {
+  margin: 10px;
 }
