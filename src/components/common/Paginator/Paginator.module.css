@@ -1,5 +1,6 @@
 .paginator {
     margin: 10px;
+    justify-content: center;
 }
 
 .pageNumber {

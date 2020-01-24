@@ -2,3 +2,26 @@
     width: 100px;
     height: 100px;
 }
+
+.usersContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.userWrapper {
+    background-color: var(--bg-light-secondary);
+    color: var(--dark);
+    border-radius: 15px;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 3%;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.userWrapper.followed {
+    background-color: var(--bg-light-main);
+    color: var(--text-light-main);
+}
