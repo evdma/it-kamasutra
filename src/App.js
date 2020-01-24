@@ -14,6 +14,7 @@ import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { withSuspense } from './hoc/withSuspense';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NotFound from "./components/common/NotFound/NotFound";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
@@ -58,7 +59,7 @@ class App extends React.Component {
             }
             />
             <Route path='/*' render={() =>
-              <div>404 NOT FOUND</div>
+              <NotFound />
             }
             />
           </Switch>
