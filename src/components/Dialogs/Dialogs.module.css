@@ -3,13 +3,18 @@
     grid-template-columns: 2fr 10fr;
 }
 
-.dialog{
+.dialog,
+.dialog a{
     padding: 10px;
-    color: white;
+    color: var(--text-light-secondary);
+    background-color: var(--bg-light-secondary);
 }
 
-.dialog.active{
-    color: gold;
+.dialog.active,
+.active a{
+    color: var(--text-light-main);
+    background-color: var(--bg-light-main);
+    transform: scale(1.05);
 }
 
 .messages{
@@ -18,4 +23,10 @@
 
 .message{
     color: white;
+    padding: 5px 10px;
+    border-radius: 25px;
+    background-color: var(--bg-secondary-accent);
+    margin: 30px 0;
+    color: var(--dark);
+    width: max-content;
 }

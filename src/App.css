@@ -9,6 +9,8 @@
   --bg-secondary-accent: #fcd704;
   --text-main-accent: #fcd704;
   --text-secondary-accent: #24b1b8;
+  --text-light-secondary: #4a9580;
+  --text-light-main: #d7fff6;
 }
 
 .app-wrapper{
@@ -23,6 +25,7 @@
 }
 
 .app-wrapper-content{
+  padding: 30px;
   grid-area: c;
   background-color: var(--bg-light);
 }
