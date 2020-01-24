@@ -12,3 +12,7 @@
     padding: 5px;
     color: red;
 }
+
+.formControlWrapper{
+    display: flex;
+}

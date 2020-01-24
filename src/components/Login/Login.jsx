@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { login } from "../../redux/auth-reducer";
 import { Redirect } from 'react-router-dom';
 import styles from '../common/FormsControls/FormControls.module.css';
+import Button from 'react-bootstrap/Button';
 
 const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
     return (
@@ -21,7 +22,7 @@ const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
                 {error}
             </div>}
             <div>
-                <button>Login</button>
+                <Button variant="success" type="submit">Login</Button>
             </div>
         </form>
     )
