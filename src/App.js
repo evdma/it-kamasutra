@@ -13,6 +13,7 @@ import store from './redux/redux-store';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { withSuspense } from './hoc/withSuspense';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
