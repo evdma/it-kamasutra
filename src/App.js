@@ -52,7 +52,7 @@ class App extends React.Component {
             <Route path='/dialogs/:dialogId?' render={withSuspense(DialogsContainer)}
             />
             <Route path='/users' render={() =>
-              <UsersContainer />}
+              <UsersContainer pageTitle="Users" />}
             />
             <Route path='/login' render={() =>
               <LoginPage />
