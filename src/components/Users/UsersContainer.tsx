@@ -1,5 +1,5 @@
 import React from 'react';
-import { follow, unfollow, setCurrentPage, requestUsers } from '../../redux/users-reducer';
+import { follow, unfollow, actions, requestUsers } from '../../redux/users-reducer';
 import { connect } from 'react-redux';
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
@@ -76,5 +76,5 @@ let mapStateToProps = (state: AppStateType): MapStatePropsType => {
 export default compose(
     connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(
         mapStateToProps,
-        { follow, unfollow, getUsers: requestUsers, setCurrentPage })
+        { follow, unfollow, getUsers: requestUsers, setCurrentPage: actions.setCurrentPage })
 )(UsersContainer);
