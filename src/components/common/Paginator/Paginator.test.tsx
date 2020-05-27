@@ -16,4 +16,4 @@ describe("Paginator components tests", () => {
         let button = root.findAllByType("button");
         expect(button.length).toBe(1);
     })
-})
+});

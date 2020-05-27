@@ -4,7 +4,16 @@ import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import logo from '../../assets/images/logo.png';
 
-const Header = (props) => {
+export type MapPropsType = {
+    isAuth: boolean;
+    login: string | null;
+}
+
+export type DispatchPropsType = {
+    logout: () => void;
+}
+
+const Header: React.FC<MapPropsType & DispatchPropsType> = (props) => {
     return (<header className={classes.header}>
         <NavLink to={'/'}>
             <div className={classes.titleBlock}>

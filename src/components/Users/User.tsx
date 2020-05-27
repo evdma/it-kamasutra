@@ -4,8 +4,16 @@ import userPhoto from '../../assets/images/user.png';
 import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import cn from "classnames";
+import { UserType } from '../../types/types';
 
-let User = ({ user, followingInProgress, unfollow, follow }) => {
+type PropsType = {
+    user: UserType;
+    followingInProgress: Array<number>;
+    unfollow: (userId: number) => void;
+    follow: (userId: number) => void;
+}
+
+let User: React.FC<PropsType> = ({ user, followingInProgress, unfollow, follow }) => {
     return (<div className={cn(styles.userWrapper, { [styles.followed]: user.followed })}>
         <span>
             <div>

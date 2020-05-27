@@ -26,7 +26,7 @@ let initialState = {
 export type InitialStateType = typeof initialState;
 
 export const actions = {
-    sendMessageCreator: (newMessageBody: string) => ({ type: 'SN/Dialogs/SEND_MESSAGE', newMessageBody })
+    sendMessage: (newMessageBody: string) => ({ type: 'SN/Dialogs/SEND_MESSAGE', newMessageBody })
 }
 
 type ActionsType = InferActionsTypes<typeof actions>;
