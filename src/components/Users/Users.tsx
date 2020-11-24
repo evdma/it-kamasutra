@@ -72,7 +72,7 @@ export const Users: FC = () => {
         if (currentPage !== 1) query.page = String(currentPage);
 
         history.push({
-            pathname: '/users',
+            pathname: '/developers',
             search: queryString.stringify(query)
         });
     }, [filter, currentPage]);
