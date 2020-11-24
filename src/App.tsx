@@ -3,8 +3,8 @@ import './App.css';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
 import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
-import UsersContainer from './components/Users/UsersContainer';
-import LoginPage from './components/Login/Login';
+import { UsersPage } from './components/Users/UsersContainer';
+import { LoginPage } from './components/LoginPage/LoginPage';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { initializeApp } from './redux/app-recuder';
@@ -64,7 +64,7 @@ class App extends React.Component<MapPropsType & DispatchPropsType> {
             <Route path='/dialogs/:dialogId?' render={() => <SuspendedDialogs />}
             />
             <Route path='/users' render={() =>
-              <UsersContainer pageTitle="Users" />}
+              <UsersPage pageTitle="Users" />}
             />
             <Route path='/login' render={() =>
               <LoginPage />
